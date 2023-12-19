@@ -1,22 +1,19 @@
-require("dotenv").config();
-
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-
-const isProd = process.env.NODE_ENV === "production";
-const PORT = process.env.PORT || 3000;
+const { DefinePlugin } = require("webpack");
+const Dotenv = require("dotenv-webpack");
 
 module.exports = {
-  mode: isProd ? "production" : "development",
-  devtool: isProd ? "hidden-source-map" : "source-map", // development 환경에서만 source-map을 만든다.
+  mode: "development", // 또는 "production"
+  devtool: "source-map",
   entry: "./src/index.tsx",
   output: {
-    filename: "[name].js", // [name]은 청크의 이름을 사용한다. 
-    path: path.join(__dirname, "/dist"), 
+    filename: "[name].js",
+    path: path.join(__dirname, "/dist"),
   },
   resolve: {
     modules: ["node_modules"],
-    extensions: [".js", ".jsx", ".ts", ".tsx"], 
+    extensions: [".js", ".jsx", ".ts", ".tsx"],
   },
   module: {
     rules: [
@@ -24,7 +21,14 @@ module.exports = {
         test: /\.(ts|tsx)$/,
         loader: "ts-loader",
         options: {
-          transpileOnly: isProd ? false : true,
+          transpileOnly: true,
+        },
+      },
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
         },
       },
       {
@@ -45,16 +49,23 @@ module.exports = {
       template: path.resolve(__dirname, "public", "index.html"),
       hash: true,
     }),
+    new DefinePlugin({
+      "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV),
+    }),
+    new Dotenv(),
   ],
   devServer: {
-    contentBase: path.resolve(__dirname, "public"),
+    static: {
+      directory: path.resolve(__dirname, "public"),
+    },
     host: "localhost",
-    port: PORT,
+    port: 3000,
     open: true,
     hot: true,
     compress: true,
     historyApiFallback: true,
-    overlay: true,
-    stats: "errors-only",
+    client: {
+      logging: "warn",
+    },
   },
 };
