@@ -1,12 +1,13 @@
 // App.tsx
 import React from "react";
-import Title from "./Title"; // Adjust the import path based on your project structure
+import Board from "./components/Board";
 
 const App: React.FC = () => {
   return (
     <div>
-      <Title /> {/* Render the Title component */}
       <div>Sample</div>
+      <Board />
+
     </div>
   );
 };
