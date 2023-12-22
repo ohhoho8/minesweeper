@@ -49,6 +49,18 @@ module.exports = {
           filename: 'images/[name][ext][query]',
         }
       },
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'images/', // adjust the output path as needed
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [
