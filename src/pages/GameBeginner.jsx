@@ -66,6 +66,7 @@ const Timer = styled.div`
 
 const GameBeginner = () => {
     const [elapsedTime, setElapsedTime] = useState(0);
+    const [gameover, setGameover] = useState(false);
 
     useEffect(() => {
         const intervalId = setInterval(() => {
@@ -77,6 +78,21 @@ const GameBeginner = () => {
         };
     }, []);
 
+    useEffect(() => {
+      let intervalId;
+  
+      if (gameover) {
+          intervalId = setInterval(() => {
+              setElapsedTime(0);
+              setGameover(false);
+          }, 1000);
+      }
+  
+      return () => {
+          clearInterval(intervalId);
+      };
+  }, [gameover]);
+
     const rows = 8;
     const cols = 8;
     const mine = 10;
@@ -86,7 +102,7 @@ const GameBeginner = () => {
             <GlobalStyle />
             <Background />
             <BoardContainer>
-                <Board rows={rows} cols={cols} mine={mine} />
+                <Board rows={rows} cols={cols} mine={mine} setGameover={setGameover} />
             </BoardContainer>
             <HeartMedium src={HeartMediumImage} alt="Heart Medium" />
             <HeartSmall src={HeartSmallImage} alt="Heart Medium" />

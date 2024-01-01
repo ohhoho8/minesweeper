@@ -55,7 +55,7 @@ const BoardContainer = styled.div`
 
 const Timer = styled.div`
   font-size: 24px;
-  color: #000000;
+  color: #ffffff;
   position: fixed;
   top: 15%;
   left: 50%;
@@ -66,6 +66,7 @@ const Timer = styled.div`
 
 const GameExpert = () => {
   const [elapsedTime, setElapsedTime] = useState(0);
+  const [gameover, setGameover] = useState(false);
 
   useEffect(() => {
       const intervalId = setInterval(() => {
@@ -77,6 +78,21 @@ const GameExpert = () => {
       };
   }, []);
 
+  useEffect(() => {
+    let intervalId;
+
+    if (gameover) {
+        intervalId = setInterval(() => {
+            setElapsedTime(0);
+            setGameover(false);
+        }, 1000);
+    }
+
+    return () => {
+        clearInterval(intervalId);
+    };
+}, [gameover]);
+
     const rows=16;
     const cols=32;
     const mine=100;
@@ -86,7 +102,7 @@ const GameExpert = () => {
             <GlobalStyle />
             <Background />
             <BoardContainer>
-                <Board rows={rows} cols={cols} mine={mine} />
+                <Board rows={rows} cols={cols} mine={mine} setGameover={setGameover} />
             </BoardContainer>
             <HeartMedium src={HeartMediumImage} alt="Heart Medium" />
             <HeartSmall src={HeartSmallImage} alt="Heart Medium" />
