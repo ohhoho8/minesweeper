@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import styled, { createGlobalStyle } from 'styled-components';
+import React, {useState, useEffect} from "react";
+import styled, {createGlobalStyle} from 'styled-components';
 import Board from "../components/Board";
 import HeartMediumImage from '../../assets/images/heart_medium.svg';
 import HeartSmallImage from '../../assets/images/heart_small.svg';
@@ -55,33 +55,33 @@ const BoardContainer = styled.div`
 
 const Timer = styled.div`
   font-size: 24px;
-  color: #ffffff;
+  color: #000000;
   position: fixed;
-  top: 30%;
+  top: 15%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: 'DungGeunMo';
   z-index: 3;
 `;
 
-const GameBeginner = () => {
-    const [elapsedTime, setElapsedTime] = useState(0);
+const GameExpert = () => {
+  const [elapsedTime, setElapsedTime] = useState(0);
 
-    useEffect(() => {
-        const intervalId = setInterval(() => {
-            setElapsedTime(prevTime => prevTime + 1);
-        }, 1000);
+  useEffect(() => {
+      const intervalId = setInterval(() => {
+          setElapsedTime(prevTime => prevTime + 1);
+      }, 1000);
 
-        return () => {
-            clearInterval(intervalId);
-        };
-    }, []);
+      return () => {
+          clearInterval(intervalId);
+      };
+  }, []);
 
-    const rows = 8;
-    const cols = 8;
-    const mine = 10;
+    const rows=16;
+    const cols=32;
+    const mine=100;
 
-    return (
+    return(
         <>
             <GlobalStyle />
             <Background />
@@ -92,7 +92,7 @@ const GameBeginner = () => {
             <HeartSmall src={HeartSmallImage} alt="Heart Medium" />
             <Timer>{`TIME ${elapsedTime}`}</Timer>
         </>
-    );
+    )
 }
 
-export default GameBeginner;
+export default GameExpert;

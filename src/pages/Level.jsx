@@ -66,20 +66,20 @@ const Level = () => {
           <Title>난이도 선택</Title>
           <HeartLarge src={HeartLargeImage} alt="Heart Large" />
           <LevelButton>
-            <Link to={{ pathname: '/gamebeginner', state: { rows: 8 } }}>
+            <Link to={{ pathname: '/gamebeginner' }}>
               Beginner
             </Link>
           </LevelButton>
-          {/* <LevelButton>
-            <Link to={{ pathname: '/game', state: { rows: 16, cols: 16, mine: 40 } }}>
+          <LevelButton>
+            <Link to={{ pathname: '/gameintermediate'}}>
               Intermediate
             </Link>
           </LevelButton>
           <LevelButton>
-            <Link to={{ pathname: '/game', state: { rows: 32, cols: 16, mine: 100 } }}>
+            <Link to={{ pathname: '/gameexpert'}}>
               Expert
             </Link>
-          </LevelButton> */}
+          </LevelButton>
         </Background>
       </>
     );
