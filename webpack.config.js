@@ -15,6 +15,9 @@ module.exports = {
     modules: ["node_modules"],
     extensions: [".js", ".jsx", ".ts", ".tsx"],
   },
+  stats: {
+    errorDetails: true,
+  },
   module: {
     rules: [
       {
@@ -69,8 +72,8 @@ module.exports = {
       hash: true,
     }),
     new DefinePlugin({
-      "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV),
-    }),
+      "process.env.NODE_ENV": JSON.stringify("development"),
+    }),    
     new Dotenv(),
   ],
   devServer: {
