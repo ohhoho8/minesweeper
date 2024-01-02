@@ -79,18 +79,11 @@ const GameExpert = () => {
   }, []);
 
   useEffect(() => {
-    let intervalId;
-
-    if (gameover) {
-        intervalId = setInterval(() => {
-            setElapsedTime(0);
-            setGameover(false);
-        }, 1000);
+    if(gameover){
+      alert('GAME OVER!');
+      setElapsedTime(0);
+      setGameover(false)
     }
-
-    return () => {
-        clearInterval(intervalId);
-    };
 }, [gameover]);
 
     const rows=16;

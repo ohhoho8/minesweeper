@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'DungGeunMo';
+  src: local('DungGeunMo'), url('../assets/DungGeunMo.woff') format('woff'), url('../assets/DungGeunMo.woff2') format('woff2'), url('../assets/DungGeunMo.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  }
+  
+  body {
+    font-family: 'DungGeunMo', sans-serif;
+  }
+  
