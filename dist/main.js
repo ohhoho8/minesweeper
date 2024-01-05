@@ -5223,21 +5223,25 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ../assets/DungGeunMo.ttf */ "./assets/DungGeunMo.ttf"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ../assets/DungGeunMo.woff */ "./assets/DungGeunMo.woff"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_1___ = new URL(/* asset import */ __webpack_require__(/*! ../assets/DungGeunMo.woff2 */ "./assets/DungGeunMo.woff2"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_2___ = new URL(/* asset import */ __webpack_require__(/*! ../assets/DungGeunMo.ttf */ "./assets/DungGeunMo.ttf"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
+var ___CSS_LOADER_URL_REPLACEMENT_1___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_1___);
+var ___CSS_LOADER_URL_REPLACEMENT_2___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_2___);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `@font-face {
-    font-family: 'DungGeunMo';
-    src: local('DungGeunMo'), url(${___CSS_LOADER_URL_REPLACEMENT_0___}) format('ttf');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'DungGeunMo';
+  src: local('DungGeunMo'), url(${___CSS_LOADER_URL_REPLACEMENT_0___}) format('woff'), url(${___CSS_LOADER_URL_REPLACEMENT_1___}) format('woff2'), url(${___CSS_LOADER_URL_REPLACEMENT_2___}) format('truetype');
+  font-weight: normal;
+  font-style: normal;
   }
   
   body {
     font-family: 'DungGeunMo', sans-serif;
   }
-  `, "",{"version":3,"sources":["webpack://./src/index.css"],"names":[],"mappings":"AAAA;IACI,yBAAyB;IACzB,+EAAuE;IACvE,mBAAmB;IACnB,kBAAkB;EACpB;;EAEA;IACE,qCAAqC;EACvC","sourcesContent":["@font-face {\r\n    font-family: 'DungGeunMo';\r\n    src: local('DungGeunMo'), url('../assets/DungGeunMo.ttf') format('ttf');\r\n    font-weight: normal;\r\n    font-style: normal;\r\n  }\r\n  \r\n  body {\r\n    font-family: 'DungGeunMo', sans-serif;\r\n  }\r\n  "],"sourceRoot":""}]);
+  `, "",{"version":3,"sources":["webpack://./src/index.css"],"names":[],"mappings":"AAAA;EACE,yBAAyB;EACzB,qMAAgL;EAChL,mBAAmB;EACnB,kBAAkB;EAClB;;EAEA;IACE,qCAAqC;EACvC","sourcesContent":["@font-face {\r\n  font-family: 'DungGeunMo';\r\n  src: local('DungGeunMo'), url('../assets/DungGeunMo.woff') format('woff'), url('../assets/DungGeunMo.woff2') format('woff2'), url('../assets/DungGeunMo.ttf') format('truetype');\r\n  font-weight: normal;\r\n  font-style: normal;\r\n  }\r\n  \r\n  body {\r\n    font-family: 'DungGeunMo', sans-serif;\r\n  }\r\n  "],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -42450,6 +42454,28 @@ var App = function () {
 
 "use strict";
 module.exports = __webpack_require__.p + "1ebba65b2b010a1e45d7.ttf";
+
+/***/ }),
+
+/***/ "./assets/DungGeunMo.woff":
+/*!********************************!*\
+  !*** ./assets/DungGeunMo.woff ***!
+  \********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "5c219fe051e35f89875f.woff";
+
+/***/ }),
+
+/***/ "./assets/DungGeunMo.woff2":
+/*!*********************************!*\
+  !*** ./assets/DungGeunMo.woff2 ***!
+  \*********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "cf30fbf9a92a637db74f.woff2";
 
 /***/ }),
 
