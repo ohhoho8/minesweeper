@@ -1,7 +1,9 @@
-import React, {useState, useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import styled, {createGlobalStyle} from 'styled-components';
 import Board from "../components/Board";
+// @ts-ignore
 import HeartMediumImage from '../../assets/images/heart_medium.svg';
+// @ts-ignore
 import HeartSmallImage from '../../assets/images/heart_small.svg';
 
 const GlobalStyle = createGlobalStyle`
@@ -64,7 +66,7 @@ const Timer = styled.div`
   z-index: 3;
 `;
 
-const GameExpert = () => {
+const GameIntermediate: React.FC = () => {
   const [elapsedTime, setElapsedTime] = useState(0);
   const [gameover, setGameover] = useState(false);
 
@@ -87,8 +89,8 @@ const GameExpert = () => {
 }, [gameover]);
 
     const rows=16;
-    const cols=32;
-    const mine=100;
+    const cols=16;
+    const mine=40;
 
     return(
         <>
@@ -104,4 +106,4 @@ const GameExpert = () => {
     )
 }
 
-export default GameExpert;
+export default GameIntermediate;

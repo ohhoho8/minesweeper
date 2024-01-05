@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { createGlobalStyle } from 'styled-components';
 import { Link } from "react-router-dom";
-import HeartMediumImage from '../../assets/images/heart_medium.svg';
+// @ts-ignore
 import HeartLargeImage from '../../assets/images/heart_large.svg';
 
 const GlobalStyle = createGlobalStyle`
@@ -30,7 +30,8 @@ const Title = styled.div`
   font-size: 100px;
   font-family: 'DungGeunMo';
   text-align: center;
-  margin-top: 250px;
+  margin-top: 150px;
+  margin-bottom: 150px;
   z-index: 3;
 `;
 
@@ -39,24 +40,13 @@ const LevelButton = styled.div`
   font-size: 40px;
   font-family: 'DungGeunMo';
   text-align: center;
-  margin-top: 100px;
-  margin-bottom: 200px;
+  margin-bottom: 50px;
   z-index: 3;
   a {
     color: #ffffff;
     text-decoration: none;
     cursor: pointer;
   }
-`;
-
-const HeartMedium = styled.img`
-  width: 500px;
-  height: auto;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
 `;
 
 const HeartLarge = styled.img`
@@ -69,20 +59,31 @@ const HeartLarge = styled.img`
   z-index: 1;
 `;
 
-const Start = () => {
-  return (
-    <>
-      <GlobalStyle />
-      <Background>
-        <Title>지뢰찾기</Title>
-        <HeartMedium src={HeartMediumImage} alt="Heart Medium" />
-        <HeartLarge src={HeartLargeImage} alt="Heart Large" />
-        <LevelButton>
-          <Link to={'/level'}>시작하기</Link>
-        </LevelButton>
-      </Background>
-    </>
-  );
-}
-
-export default Start;
+const Level: React.FC = () => {
+    return (
+      <>
+        <GlobalStyle />
+        <Background>
+          <Title>난이도 선택</Title>
+          <HeartLarge src={HeartLargeImage} alt="Heart Large" />
+          <LevelButton>
+            <Link to={{ pathname: '/gamebeginner' }}>
+              Beginner
+            </Link>
+          </LevelButton>
+          <LevelButton>
+            <Link to={{ pathname: '/gameintermediate'}}>
+              Intermediate
+            </Link>
+          </LevelButton>
+          <LevelButton>
+            <Link to={{ pathname: '/gameexpert'}}>
+              Expert
+            </Link>
+          </LevelButton>
+        </Background>
+      </>
+    );
+  }
+  
+  export default Level;

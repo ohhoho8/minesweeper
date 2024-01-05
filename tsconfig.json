@@ -10,7 +10,7 @@
       "sourceMap": true, // map 파일을 생성할 것인가
       "esModuleInterop": true, // es module 사용시 컴파일 단계에서 헬퍼 함수를 사용할 것인가
       "strict": true, // strict family 속성 전부를 true로 할 것인가
-      "noImplicitAny": false, // any 타입으로 구현된 표현식 혹은 정의를 에러처리 할 것인가
+      "noImplicitAny": true, // any 타입으로 구현된 표현식 혹은 정의를 에러처리 할 것인가
       "isolatedModules": true, // 각 파일을 분리된 모듈로 트랜스파일링할 것인가
       "forceConsistentCasingInFileNames": true, // 사용할 파일의 이름을 대소문자까지 정확하게 작성하도록 강제할 것인가
       "declaration": false, // d.ts 파일을 생성할 것인가
