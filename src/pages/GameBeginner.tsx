@@ -82,7 +82,6 @@ const GameBeginner: React.FC = () => {
 
     useEffect(() => {
       if(gameover){
-        alert('GAME OVER!');
         setElapsedTime(0);
         setGameover(false)
       }

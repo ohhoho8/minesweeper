@@ -45,11 +45,19 @@ interface CellProps {
     opened: boolean;
   };
   onClick: () => void;
+  setGameover: (status: boolean) => void;
 }
 
-const Cell: React.FC<CellProps> = ({ cell, onClick }) => {
-  if (cell.opened) {
-    const getImage = () => {
+const Cell: React.FC<CellProps> = ({ cell, onClick, setGameover }) => {
+  const handleCellClick = () => {
+    if (!cell.opened) {
+      setGameover(cell.value===9);
+    }
+    onClick();
+  }
+  
+  const getImage = () => {
+    if (cell.opened) {
       switch (cell.value) {
         case 0: return empty;
         case 1: return one;
@@ -63,20 +71,16 @@ const Cell: React.FC<CellProps> = ({ cell, onClick }) => {
         case 9: return bomb;
         default: return empty;
       }
-    };
+    } else {
+      return closed;
+    }
+  };
 
-    return (
-      <StyledCell onClick={onClick}>
-        <StyledImage src={getImage()} alt="Cell" />
-      </StyledCell>
-    );
-  } else {
-    return (
-      <StyledCell onClick={onClick}>
-        <StyledImage src={closed} alt="Closed" />
-      </StyledCell>
-    );
-  }
+  return (
+    <StyledCell onClick={handleCellClick}>
+      <StyledImage src={getImage()} alt="Cell" />
+    </StyledCell>
+  );
 };
 
 export default Cell;
